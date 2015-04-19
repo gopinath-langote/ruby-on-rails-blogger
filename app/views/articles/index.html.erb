@@ -1,0 +1,23 @@
+ <table>	
+ <style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>    
+<tr>
+	<th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Action</th>
+    <th>Delete</th>
+</tr>
+<% @articles.each do |article| %>
+	<tr>
+		<td><%= article.id %></td>
+		<td><%= article.title %></td>
+    	<td><%= article.body  %>		</td>
+    	<td><%= link_to "show", article_path(article) %></td>
+    	<td><%= link_to "delete",article_path(article), method: :delete %></td>
+  </tr>
+<% end %>
+</table> 
